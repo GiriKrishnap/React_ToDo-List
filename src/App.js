@@ -21,37 +21,43 @@ export default function App() {
 
       <div className="app">
         <div className="mainHeading">
-          <h1>ToDo List🚀</h1>
+          <h1>To-Do List🚀</h1>
         </div>
         <div className="subHeading">
           <br />
           <h2 className='animate-character'>Whoop, it's {dayName}</h2>
         </div>
         <div className="input">
-          <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} placeholder="📝 Add item..." onKeyDown={handleEnterKeyPress} />
+          <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)}
+            placeholder="📝 Add item..."
+            onKeyDown={handleEnterKeyPress} />
+
           {/* /////////////////////////////////////////////////// */}
           {/* add list */}
-
           {
-            todo ? (<i className="fas fa-plus"
-              onClick={() => { setTodos([...todos, { id: Date.now(), text: todo, status: false }]); setTodo('') }}>
-            </i>) : ('')
+            todo ? (<i className="fa-solid fa-plus"
+              onClick={() => {
+                setTodos([...todos, {
+                  id: Date.now(),
+                  text: todo, status: false
+                }]); setTodo('')
+              }}>
+            </i>) : (null)
 
           }
-
         </div>
 
         <div className="todos">
-          {todos.length < 1 ? (<h3 style={{ marginTop: 20,letterSpacing:6 }}>ZERO LIST</h3>) : (null)}
+          {todos.length < 1 ? (<h3 style={{ marginTop: 20, letterSpacing: 6 }}>ZERO LIST</h3>) : (null)}
 
           {todos.map((obj) => {
 
             return (
-
               <div key={obj.id} className="todo">
+
+                {/* /////////////////////////////////////////////////// */}
+                {/* checkBoc */}
                 <div className="left">
-                  {/* /////////////////////////////////////////////////// */}
-                  {/* checkBoc */}
                   <div className="checkbox-wrapper-31">
                     <input onChange={(e) => {
 
@@ -78,13 +84,13 @@ export default function App() {
                     <p>{obj.text}</p>
                   )}
 
-                  {/* /////////////////////////////////////////////////// */}
                 </div>
+                {/* /////////////////////////////////////////////////// */}
 
                 {/* delete an list */}
                 <div className="right">
-                  <i className="fas fa-times" onClick={() => setTodos(
-
+                  <i className="fa-solid fa-square-xmark" onClick={() => setTodos(
+                    
                     todos.filter((obj2) => {
                       if (obj.id !== obj2.id) {
                         return obj2

@@ -5,15 +5,14 @@
 
 .app {
   position: absolute;
-  margin-top: 10px;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, -50%);
   background-color: #457da8b6;
   padding: 35px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  transition: 0.6s;
+  transition: 0.7s;
 
 }
 
@@ -48,7 +47,6 @@ h2 {
   align-items: center;
   border-radius: 6px;
   padding: 10px;
-  
 
 }
 
@@ -88,6 +86,8 @@ h2 {
   border-radius: 6px;
   padding: 10px;
   padding-left: 10px;
+  transition: 0.1s; 
+  cursor: default;
 }
 
 .app .todos .todo .left {
@@ -102,6 +102,23 @@ h2 {
   font-weight: 700;
   font-style: normal;
   color: grey;
+}
+
+.todo:hover{
+  transform: scale(1.02);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.fa-solid{
+  transition: 0.5s;
+}
+.fa-plus:hover{
+  color: #51ff00;
+  transform: rotate(270deg) scale(1.2);
+}
+.fa-square-xmark:hover{
+  color: #ff0000;
+  transform: rotate(270deg) scale(1.2);
 }
 
 /* checkbox */
