@@ -121,6 +121,17 @@ h2 {
   transform: rotate(270deg) scale(1.2);
 }
 
+@keyframes smooth-appear {
+  to{
+    bottom: 20px;
+    opacity:1;
+  }
+}
+.container {
+  opacity:0;
+  animation: smooth-appear 1s ease forwards;
+}
+
 /* checkbox */
 
 .checkbox-wrapper-31:hover .check {

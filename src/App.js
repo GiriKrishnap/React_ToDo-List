@@ -53,7 +53,7 @@ export default function App() {
           {todos.map((obj) => {
 
             return (
-              <div key={obj.id} className="todo">
+              <div key={obj.id} className="todo container">
 
                 {/* /////////////////////////////////////////////////// */}
                 {/* checkBoc */}
